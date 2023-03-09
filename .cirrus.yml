@@ -2,7 +2,6 @@ env:
     # Twrp Sync Repositor
     CLANG_SYNC: https://github.com/rama982/clang.git
 
-
     # Config
     CONFIG: config.sh
 
@@ -22,14 +21,14 @@ task:
       memory: 20G
 
   Checks_script:
-      - curl -sL https://raw.githubusercontent.com/violesec/ci//scripts/checks.sh | bash
+      - curl -sL https://raw.githubusercontent.com/violesec/ci/main/scripts/checks.sh | bash
 
   Sync_script:
-      - curl -sL https://raw.githubusercontent.com/violesec/ci//scripts/sync.sh | bash
+      - curl -sL https://raw.githubusercontent.com/violesec/ci/main/scripts/sync.sh | bash
 
   Build_script:
-      - curl -sL https://raw.githubusercontent.com/violesec/ci//scripts/build.sh | bash
+      - curl -sL https://raw.githubusercontent.com/violesec/ci/main/scripts/build.sh | bash
 
   Upload_script:
       - export TIMEOUT=43200 # Link timeout (in minutes)
-      - curl https://raw.githubusercontent.com/violesec/ci//scripts/upload.sh | bash
+      - curl https://raw.githubusercontent.com/violesec/ci/main/scripts/upload.sh | bash

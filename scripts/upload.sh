@@ -54,7 +54,7 @@ DATE_S=$(date +"%T")
 # Send the Message on Telegram
 echo -e \
 "
-ðŸ¦Š OrangeFox Recovery CI
+ðŸ¦Š Kernel CI
 âœ„1¤7 Build Completed Successfully!
 ðŸ“± Device: "${DEVICE}"
 ðŸ–¥ Build System: "${TWRP_BRANCH}"

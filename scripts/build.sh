@@ -29,7 +29,7 @@ fi
 
 echo -e \
 "
-🦊 OrangeFox Recovery CI
+🦊 Redmi 9 Kernel CI
 
 ✔️ The Build has been Triggered!
 
