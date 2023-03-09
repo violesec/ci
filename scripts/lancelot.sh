@@ -7,6 +7,12 @@ mkdir outL
 export ARCH=arm64
 export SUBARCH=arm64
 export DTC_EXT=dtc
+
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
 make O=outL ARCH=arm64 lancelot_defconfig
 export PATH="${PWD}/clang-13/aaa/:${PATH}"
 make -j$(nproc --all) O=outL \
@@ -26,12 +32,14 @@ DATE=$(date "+%Y%m%d-%H%M")
 
 ZIPNAME="Pizza_Lancelot-R-vendor"
 cd ${PWD}/AnyKernel3-master
-rm *.zip *-dtb 
+# rm *.zip *-dtb 
 cp $bp/arch/arm64/boot/Image.gz-dtb .
+cp $bp/arch/arm64/boot/dts/mediatek/mt6768.dtb .
 ZIPNAME="Shas-Dream-Lancelot-a13r-vendor"
 cd ${PWD}/AnyKernel3-master
-rm *.zip *-dtb *dtbo.img
+# rm *.zip *-dtb *dtbo.img
 cp $bp/arch/arm64/boot/Image.gz-dtb .
-cp $bp/arch/arm64/boot/dtbo.img .
+cp $bp/arch/arm64/boot/dts/mediatek/mt6768.dtb 
+# cp $bp/arch/arm64/boot/dtbo.img .
 zip -r9 "$ZIPNAME"-"${DATE}".zip *
 cd - || exit
