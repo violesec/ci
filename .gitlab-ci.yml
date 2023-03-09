@@ -1,0 +1,15 @@
+image: ghcr.io/sushrut1101/docker:arch
+
+variables:
+  CLANG_SYNC: https://github.com/Arafattex/prebuilts_clang_host_linux-x86_clang-proton
+  CONFIG: "config.sh"
+
+OrangeFox-CI:
+  stage: build
+  timeout: 3 hours
+  script:
+    - source config.sh
+    - curl -sL https://raw.githubusercontent.com/violesec/ci/main/scripts/checks.sh | bash
+    - curl -sL https://raw.githubusercontent.com/violesec/ci/main/scripts/sync.sh | bash
+    - curl -sL https://raw.githubusercontent.com/violesec/ci/main/scripts/build.sh | bash
+    - curl -sL https://raw.githubusercontent.com/violesec/ci/main/scripts/upload.sh | bash
