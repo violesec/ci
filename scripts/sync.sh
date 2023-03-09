@@ -15,6 +15,7 @@ telegram_message() {
 }
 git clone --depth=1 https://github.com/violesec/android_kernel_xiaomi_mt6768 -b lineage-20 kernel
 cd kernel
+curl https://raw.githubusercontent.com/violesec/ci/main/scripts/lancelot.sh -o lancelot.sh
 git clone https://github.com/rama982/AnyKernel3 --depth=1 AnyKernel3-master
 mkdir clang-13
 cd clang-13
